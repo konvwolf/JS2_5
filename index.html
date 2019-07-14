@@ -11,14 +11,14 @@
         <header>
             <div class="logo">E-shop</div>
             <div class="cart">
-                <form action="#" class="search-form">
-                    <input type="text" class="search-field" v-model="search">
+                <form action="#" class="search-form" @submit.prevent="searchItem">
+                    <input type="text" class="search-field" v-model.lazy="search">
                     <button class="btn-search">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
                 <button class="btn-cart" type="button" @click="isHidden = !isHidden">Корзина</button>
-                <div class="cart-block" v-if="isHidden"></div>
+                <div class="cart-block" v-show="isHidden"></div>
             </div>
         </header>
         <main>
